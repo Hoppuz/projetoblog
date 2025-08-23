@@ -23,11 +23,14 @@ function App() {
           right: 0,
           zIndex: 1000,
           width: "100%",
-          boxSizing: "border-box"
+          boxSizing: "border-box",
+          height: "70px",
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
-          <div style={{ fontWeight: "bold", fontSize: "20px" }}>MeuBlog</div>
+          <Link to="/"  style={{textDecoration: 'none', color: 'inherit'}}>
+            <div style={{ fontWeight: "bold", fontSize: "20px" }}>MeuBlog</div>
+          </Link>
 
           <nav style={{ position: "relative" }}>
             <div
@@ -38,28 +41,45 @@ function App() {
                 position: "relative"
               }}
               onMouseEnter={() => setShowCategories(true)}
-              onMouseLeave={() => setShowCategories(false)}
+              onMouseLeave={() => setTimeout(() => setShowCategories(false), 200)}
             >
               Categorias ▼
               {showCategories && (
-                <div style={{
-                  position: "absolute",
-                  top: "100%",
-                  left: 0,
-                  backgroundColor: "#1e1e2d",
-                  borderRadius: "6px",
-                  padding: "8px 0",
-                  minWidth: "150px",
-                  zIndex: 1000,
-                  marginTop: "5px"
-                }}>
-                  <div style={{ padding: "8px 12px" }}>Tecnologia</div>
-                  <div style={{ padding: "8px 12px" }}>Estilo de Vida</div>
-                  <div style={{ padding: "8px 12px" }}>Negócios</div>
-                  <div style={{ padding: "8px 12px" }}>Educação</div>
-                  <div style={{ padding: "8px 12px" }}>Saúde</div>
-                  <div style={{ padding: "8px 12px" }}>Entretenimento</div>
-                </div>
+                <>
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: "100%",
+                      left: 0,
+                      right: 0,
+                      height: "10px",
+                      backgroundColor: "transparent"
+                    }}
+                    onMouseEnter={() => setShowCategories(true)}
+                  />
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: "calc(100% + 10px)",
+                      left: 0,
+                      backgroundColor: "#1e1e2d",
+                      borderRadius: "6px",
+                      padding: "8px 0",
+                      minWidth: "150px",
+                      zIndex: 1000,
+                      boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)"
+                    }}
+                    onMouseEnter={() => setShowCategories(true)}
+                    onMouseLeave={() => setShowCategories(false)}
+                  >
+                    <div style={{ padding: "8px 12px", cursor: "pointer" }}>Tecnologia</div>
+                    <div style={{ padding: "8px 12px", cursor: "pointer" }}>Estilo de Vida</div>
+                    <div style={{ padding: "8px 12px", cursor: "pointer" }}>Negócios</div>
+                    <div style={{ padding: "8px 12px", cursor: "pointer" }}>Educação</div>
+                    <div style={{ padding: "8px 12px", cursor: "pointer" }}>Saúde</div>
+                    <div style={{ padding: "8px 12px", cursor: "pointer" }}>Entretenimento</div>
+                  </div>
+                </>
               )}
             </div>
           </nav>
@@ -81,7 +101,14 @@ function App() {
         </Link>
       </header>
 
-      <main style={{ padding: "24px", maxWidth: "800px", margin: "0 auto" }}>
+      <main style={{
+        padding: "24px",
+        maxWidth: "800px",
+        margin: "0 auto",
+        marginTop: "70px", 
+        minHeight: "calc(100vh - 70px)",
+        boxSizing: "border-box",
+      }}>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path="/login" element={<Login />} />
