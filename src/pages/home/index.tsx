@@ -1,6 +1,10 @@
+import { useNavigate } from "react-router";
 import { database } from "../database/database";
+import { Link } from "react-router-dom";
 
 function Home() {
+  const navigate = useNavigate();
+
   return (
     <div
       style={{
@@ -27,6 +31,7 @@ function Home() {
         }}
       >
         {database.posts.map((post) => {
+          const id = post.id;
           const textoCortado = post.content.slice(0, 60) + " ...";
           return (
             <div
@@ -76,7 +81,7 @@ function Home() {
                   fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
                 }}
               >
-                Ler mais –
+                <Link to={`/posts/${id}`}> Ler mais –</Link>
               </div>
             </div>
           );
