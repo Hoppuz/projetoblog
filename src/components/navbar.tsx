@@ -1,9 +1,7 @@
 import { Link } from "react-router-dom";
-//import { useState } from "react";
-import { database } from "../../pages/database/database";
+import { database } from "../database/database";
 
 export default function Navbar() {
-  //const [showCategories, setShowCategories] = useState(false);
   return (
     <header
       style={{
@@ -36,8 +34,6 @@ export default function Navbar() {
               cursor: "pointer",
               position: "relative",
             }}
-            //        onMouseEnter={() => setShowCategories(true)}
-            //        onMouseLeave={() => setTimeout(() => setShowCategories(false), 200)}
           >
             <select>
               <option>Categorias</option>;

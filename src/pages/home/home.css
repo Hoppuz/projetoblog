@@ -1,0 +1,44 @@
+.home-container {
+  padding: 40px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.home-title {
+  text-align: left;
+  margin-bottom: 40px;
+  color: #a6a6a7;
+  font-size: 45px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0 20px;
+}
+
+.posts-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  padding: 0 20px;
+}
+
+.post-card-wrapper {
+  flex: 0 0 calc(50% - 16px);
+  box-sizing: border-box;
+}
+
+@media (max-width: 968px) {
+  .post-card-wrapper {
+    flex: 0 0 100%; 
+  }
+}
+
+@media (max-width: 768px) {
+  .home-title {
+    font-size: 36px;
+    padding: 0 15px;
+  }
+  
+  .posts-grid {
+    padding: 0 15px;
+    gap: 24px;
+  }
+}
