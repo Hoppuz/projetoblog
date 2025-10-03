@@ -32,6 +32,7 @@ function App() {
 }
 
 export default App;
+
 const styles: Record<string, React.CSSProperties> = {
   routeStl: {
     width: window.innerWidth,

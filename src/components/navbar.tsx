@@ -1,7 +1,25 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { database } from "../database/database";
+import { useState } from "react";
+import "./Navbar.css";
 
 export default function Navbar() {
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const navigate = useNavigate();
+
+  const handleCategoryChange = (
+    event: React.ChangeEvent<HTMLSelectElement>
+  ) => {
+    const category = event.target.value;
+    setSelectedCategory(category);
+
+    if (category) {
+      navigate(`/?category=${encodeURIComponent(category)}`);
+    } else {
+      navigate("/");
+    }
+  };
+
   return (
     <header
       style={{
@@ -35,11 +53,17 @@ export default function Navbar() {
               position: "relative",
             }}
           >
-            <select>
-              <option>Categorias</option>;
-              {database.categories.map((itens) => {
-                return <option>{itens}</option>;
-              })}
+            <select
+              value={selectedCategory}
+              onChange={handleCategoryChange}
+              className="category-select"
+            >
+              <option value="">Todas as Categorias</option>
+              {database.categories.map((category) => (
+                <option key={category} value={category}>
+                  {category}
+                </option>
+              ))}
             </select>
           </div>
         </nav>

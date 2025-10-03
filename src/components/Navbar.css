@@ -1,0 +1,65 @@
+/* Estilo para o select de categorias */
+.category-select {
+  background-color: #2a2a3c !important;
+  color: white !important;
+  border: 1px solid #3a3a4a !important;
+  border-radius: "4px" !important;
+  padding: "8px" !important;
+  cursor: "pointer" !important;
+  min-width: 180px;
+}
+
+/* Estilo quando o select está aberto */
+.category-select:focus {
+  outline: none;
+  border-color: #4fbbff !important;
+  box-shadow: 0 0 0 2px rgba(79, 187, 255, 0.2) !important;
+}
+
+/* Estilo para as options do select */
+.category-select option {
+  background-color: #2a2a3c !important;
+  color: white !important;
+  padding: 10px !important;
+}
+
+/* Estilo quando passa o mouse sobre uma option */
+.category-select option:hover {
+  background-color: #3b82f6 !important;
+}
+
+/* Estilo para a seta do dropdown */
+.category-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 16px;
+  padding-right: 30px !important;
+}
+
+/* Estilo para quando o select está aberto (alguns navegadores) */
+.category-select:active,
+.category-select:focus {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234fbbff'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+}
+
+/* Para navegadores Webkit (Chrome, Safari) */
+.category-select::-webkit-scrollbar {
+  width: 8px;
+}
+
+.category-select::-webkit-scrollbar-track {
+  background: #2a2a3c;
+}
+
+.category-select::-webkit-scrollbar-thumb {
+  background: #4fbbff;
+  border-radius: 4px;
+}
+
+.category-select::-webkit-scrollbar-thumb:hover {
+  background: #3b82f6;
+}

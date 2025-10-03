@@ -19,7 +19,7 @@ export const database = {
     },
     {
       id: "0002",
-      categorie: "Tecnologia",
+      categorie: "Negócios",
       imageUrl:
         "https://www.cartacapital.com.br/wp-content/uploads/2022/06/iStock-937980218-2.jpg",
       title: "Mercado de Criptos",
@@ -28,7 +28,7 @@ export const database = {
     },
     {
       id: "0003",
-      categorie: "Tecnologia",
+      categorie: "Saúde",
       imageUrl:
         "https://nutrata.com.br/wp-content/uploads/2023/02/f74df592-d708-456f-a81f-86eb1cf9f105.jpg",
       title: "10 hábitos saudáveis",
@@ -37,7 +37,7 @@ export const database = {
     },
     {
       id: "0004",
-      categorie: "Tecnologia",
+      categorie: "Educação",
       imageUrl:
         "https://www.estudaqui.com/wp-content/uploads/2019/03/New-Project-40-1.jpg",
       title: "Estudos e produtividade",

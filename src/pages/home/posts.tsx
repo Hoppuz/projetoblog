@@ -5,13 +5,13 @@ import "./Post.css";
 export default function Post() {
   const { id } = useParams();
 
-    if (!id) {
+  if (!id) {
     return (
       <div className="error">
         <h2>Post não encontrado</h2>
         <p>O ID do post não foi especificado.</p>
         <Link to="/" className="back-button">
-           Voltar para a home
+          Voltar para a home
         </Link>
       </div>
     );
@@ -25,7 +25,7 @@ export default function Post() {
         <h2>Post não encontrado</h2>
         <p>Não foi possível encontrar o post com ID: {id}</p>
         <Link to="/" className="back-button">
-         Voltar para a home
+          Voltar para a home
         </Link>
       </div>
     );
@@ -33,7 +33,6 @@ export default function Post() {
 
   return (
     <div className="post-container">
-      
       <img src={post.imageUrl} alt={post.title} className="post-image" />
 
       <span className="post-category">{post.categorie}</span>
