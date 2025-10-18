@@ -19,7 +19,19 @@ export default function Navbar() {
       navigate("/");
     }
   };
-
+  async function handleTeste() {
+    try {
+      const res = await fetch("http://localhost:3000/auth/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email: "teste@teste.com", password: "123456" }),
+      });
+      const data = await res.json();
+      console.log({ data });
+    } catch (error) {}
+  }
   return (
     <header
       style={{
@@ -70,19 +82,20 @@ export default function Navbar() {
       </div>
 
       <Link to="/login">
-        <button
-          style={{
-            backgroundColor: "#3b82f6",
-            color: "white",
-            padding: "8px 16px",
-            borderRadius: "6px",
-            border: "none",
-            cursor: "pointer",
-          }}
-        >
-          Login
-        </button>
-      </Link>
+      <button
+        style={{
+          backgroundColor: "#3b82f6",
+          color: "white",
+          padding: "8px 16px",
+          borderRadius: "6px",
+          border: "none",
+          cursor: "pointer",
+        }}
+        onClick={handleTeste}
+      >
+        Login
+      </button>
+      </Link> 
     </header>
   );
 }
