@@ -5,6 +5,12 @@
   font-family: Arial, sans-serif;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   background-color: #1e1e2f;
   color: #fff;

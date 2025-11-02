@@ -30,7 +30,9 @@ export default function Navbar() {
       });
       const data = await res.json();
       console.log({ data });
-    } catch (error) {}
+    } catch (error) {
+      console.error("Erro ao registrar:", error);
+    }
   }
   return (
     <header

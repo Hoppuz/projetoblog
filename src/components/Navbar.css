@@ -2,8 +2,8 @@
   background-color: #2a2a3c !important;
   color: white !important;
   border: 1px solid #3a3a4a !important;
-  border-radius: "4px" !important;
-  padding: "8px" !important;
+  border-radius: 4px;
+  padding: 0.5rem;
   cursor: "pointer" !important;
   min-width: 180px;
 }
